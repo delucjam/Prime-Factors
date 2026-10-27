@@ -22,6 +22,16 @@ def generate_prime_factors(number):
                     if n == i:
                         primefactors.append(int(n))
                 print(primefactors)
+            for j in primefactors:
+                print('j: ', j)
+                for k in range(2, j):
+                    if j != 2:  # but instead is 4 for example
+                        n_two = j / k  # so probably n_two = 2
+                        if j % k == 0:
+                            primefactors.append(int(k))
+                            primefactors.remove(int(j))
+                            if n_two == k:
+                                primefactors.append(int(n_two))
     else:
         raise ValueError('Incorrect data type')
     return primefactors
@@ -55,11 +65,10 @@ def test_step6():
     step6.sort()
     assert step6 == [2, 3]
 
-"""
 def test_step7():
     primefactors.clear()
     step7 = generate_prime_factors(8)
     step7.sort()
     assert step7 == [2,2,2]
-"""
+
 
