@@ -50,3 +50,9 @@ def test_step5():
     step5 = generate_prime_factors(4)
     assert step5 == [2, 2]
 
+def test_step6():
+    primefactors.clear()
+    step6 = generate_prime_factors(6)
+    step6.sort()
+    assert step6 == [2, 3]
+
