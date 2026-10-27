@@ -11,6 +11,9 @@ def generate_prime_factors(number):
         pass
         if number == 1:
             return primefactors
+        elif number == 2:
+            primefactors.append(number)
+            return primefactors
         else:
             pass
     else:
@@ -23,4 +26,8 @@ def test_step1():
 def test_step2():
     step2 = generate_prime_factors(1)
     assert step2 == []
+
+def test_step3():
+    step3 = generate_prime_factors(2)
+    assert step3 == [2]
 
