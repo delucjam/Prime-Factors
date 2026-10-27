@@ -10,14 +10,23 @@ def generate_prime_factors(number):
     if type(number) == int:
         pass
         if number == 1:
-            return primefactors
-        elif number > 1 < 3:
+            primefactors.clear()
+        if 1 < number < 4:
             primefactors.append(number)
-            return primefactors
         else:
-            pass
+            print('checking for prime factors\n')
+            for i in range(2, number):
+                if number % i == 0: #if number is divisible by i, therefore is a factor of number
+                    n = int(number / i)
+                    print('n: ',n)
+                    primefactors.append(n)
+                    if i * i == number:
+                        primefactors.append(int(i))
+                else:
+                    pass
     else:
         raise ValueError('Incorrect data type')
+    return primefactors
 
 def test_step1():
     with raises(ValueError):
@@ -35,4 +44,9 @@ def test_step4():
     primefactors.clear()
     step4 = generate_prime_factors(3)
     assert step4 == [3]
+
+def test_step5():
+    primefactors.clear()
+    step5 = generate_prime_factors(4)
+    assert step5 == [2, 2]
 
