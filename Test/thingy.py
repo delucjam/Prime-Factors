@@ -1,7 +1,7 @@
 import math
 
 list = []
-thing = 6
+thing = 9
 
 for i in range(2, thing):
     n = thing / i

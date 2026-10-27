@@ -58,7 +58,6 @@ def test_step5():
     step5 = generate_prime_factors(4)
     assert step5 == [2, 2]
 
-
 def test_step6():
     primefactors.clear()
     step6 = generate_prime_factors(6)
@@ -71,4 +70,8 @@ def test_step7():
     step7.sort()
     assert step7 == [2,2,2]
 
-
+def test_step8():
+    primefactors.clear()
+    step8 = generate_prime_factors(9)
+    step8.sort()
+    assert step8 == [3,3]
